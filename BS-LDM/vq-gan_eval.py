@@ -15,7 +15,7 @@ def eval():
     recon_output_path = "./vq-gan_recon"
     compress_output_path = "./vq-gan_compress"
 
-    model = torch.load("2024-02-13-VQGAN.pth").to(device).eval()
+    model = torch.load("2024-02-13-VQGAN.pth", map_location=device, weights_only=False).eval()
 
     with torch.no_grad():
         for filename in os.listdir(source_path):
